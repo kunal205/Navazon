@@ -1,0 +1,13 @@
+# Dependencies
+/Backend/node_modules
+
+# Secret environment file with passwords
+/Backend/.env
+
+# User uploaded files (profile pictures, etc.)
+/Backend/upload/
+
+# Logs
+/Backend/npm-debug.log*
+/Backend/yarn-error.log
+/Backend/yarn-debug.log

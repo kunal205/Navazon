@@ -1,0 +1,52 @@
+.bg-secondary-subtle {
+  height: 100%;
+  width: 100%;
+}
+.items {
+  height: 100%;
+}
+.btn-pink {
+  background-color: #e91e63;
+  border-color: #e91e63;
+  color: white;
+}
+.btn-outline-pink {
+  border-color: #e91e63;
+  color: #e91e63;
+}
+@media (max-width: 576px) {
+  .pro-container {
+    height: 60vh;
+  }
+  .card-img-top {
+    height: 35%;
+  }
+  .text-pink {
+    color: #e91e63;
+  }
+}
+@media (min-width: 577px) {
+}
+@media (min-width: 1000px) {
+  .items:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+  .item-card {
+    transition: all 0.3s ease;
+  }
+  .item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  .btn-pink:hover {
+    background-color: #c2185b;
+    border-color: #c2185b;
+    color: white;
+  }
+  .btn-outline-pink:hover {
+    background-color: #e91e63;
+    border-color: #e91e63;
+    color: white;
+  }
+}
