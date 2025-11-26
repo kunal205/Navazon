@@ -75,7 +75,7 @@ export const signInController = async (req, res) => {
             const token = tokenGenerator(ifUserExist._id)
             res.cookie("token", token, {
                 httpOnly: true,
-                secure: false,
+                secure: true,
                 sameSite: "strict",
                 maxAge: 24 * 60 * 60 * 1000
             })
