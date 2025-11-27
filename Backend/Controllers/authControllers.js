@@ -31,8 +31,8 @@ export const signUpController = async (req, res) => {
             const token = tokenGenerator(user._id)
             res.cookie("token", token, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "strict",
+                secure: true,
+                sameSite: "none",
                 maxAge: 24 * 60 * 60 * 1000
             })
             return res.status(200).json({
