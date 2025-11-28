@@ -14,23 +14,22 @@ const Login = () => {
       redirect("/");
     }
   }, [user, message, redirect]);
+  console.log(user.message);
   const { email, password } = user;
   const handleLogIn = async () => {
     dispatch(logInUser(user));
   };
   return (
-    <>
-      <div className="min-vh-50 d-flex container p-3">
-        {/* Right Side - Sign Up Form */}
-        <div className=" w-50  align-items-center justify-content-center p-4 m-auto bg-white border border-black offset-1">
-          <div className="w-100" style={{ maxWidth: "600px" }}>
+    <div className="container py-5">
+      <div className="row justify-content-center">
+        <div className="col-12 col-sm-10 col-md-8 col-lg-6">
+          <div className="bg-white p-4 p-md-5 shadow-sm rounded border">
             {/* Header */}
-            <div className="mb-4">
-              <h2 className="fw-bold mb-2 text-center">Log-in</h2>
-              <p className="text-muted text-center">
-                Fill in your details to get started
-              </p>
+            <div className="text-center mb-4">
+              <h2 className="fw-bold">Log-in</h2>
+              <p className="text-muted">Fill in your details to get started</p>
             </div>
+
             {/* Email Input */}
             <div className="mb-3">
               <label className="form-label fw-medium">Email Address</label>
@@ -47,40 +46,43 @@ const Login = () => {
                 className="form-control form-control-lg"
               />
             </div>
+
             {/* Password Input */}
             <div className="mb-3">
               <label className="form-label fw-medium">Password</label>
-              <div className="position-relative">
-                <input
-                  name="password"
-                  value={password}
-                  type="password"
-                  placeholder="Enter your password"
-                  className="form-control form-control-lg"
-                  onChange={(e) =>
-                    dispatch(
-                      handleuser({ ...user, [e.target.name]: e.target.value })
-                    )
-                  }
-                />
-              </div>
+              <input
+                name="password"
+                value={password}
+                type="password"
+                placeholder="Enter your password"
+                className="form-control form-control-lg"
+                onChange={(e) =>
+                  dispatch(
+                    handleuser({ ...user, [e.target.name]: e.target.value })
+                  )
+                }
+              />
             </div>
+
             {/* Login Button */}
             <button
               onClick={handleLogIn}
-              className="btn btn-primary btn-lg w-100 mb-4"
+              className="btn btn-primary btn-lg w-100 mb-3"
             >
               Log-in
             </button>
+
+            {/* Messages */}
             <div className="text-danger text-center">{error}</div>
             <div className="text-success text-center">{message}</div>
-            <p className="text-center">
-              new user? <a href="/register">register here</a>
+
+            <p className="text-center mt-3">
+              New user? <a href="/register">Register here</a>
             </p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
