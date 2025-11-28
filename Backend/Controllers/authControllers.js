@@ -102,9 +102,3 @@ export const signOutController = async (req, res) => {
         message: "Signed Out Successfully"
     })
 };
-export const kuchhi = async (req, res) => {
-    res.status(200).json({
-        status: "success",
-        message: "Kuch bhi kar liya"
-    })
-} 
