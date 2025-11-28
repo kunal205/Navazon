@@ -10,7 +10,7 @@ const Login = () => {
     dispatch(isCurrentUser());
   }, [dispatch]);
   useEffect(() => {
-    if (user || message) {
+    if (user && message) {
       redirect("/");
     }
   }, [user, message, redirect]);
