@@ -21,11 +21,9 @@ const WishList = () => {
       );
     }
   }
-  console.log(user);
   const wishlistedProducts = productList.filter((product) =>
     wishlist.includes(product.id)
   );
-  console.log(wishlistedProducts);
   const MoveToCart = async (e, product) => {
     e.stopPropagation();
     await dispatch(addToCart({ productId: product.id, quantity: 1 })).unwrap();

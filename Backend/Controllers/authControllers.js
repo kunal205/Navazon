@@ -33,6 +33,7 @@ export const signUpController = async (req, res) => {
                 httpOnly: true,
                 secure: true,
                 sameSite: "none",
+                path: "/",
                 maxAge: 24 * 60 * 60 * 1000
             })
             return res.status(200).json({
@@ -76,7 +77,8 @@ export const signInController = async (req, res) => {
             res.cookie("token", token, {
                 httpOnly: true,
                 secure: true,
-                sameSite: "strict",
+                sameSite: "none",
+                path: "/",
                 maxAge: 24 * 60 * 60 * 1000
             })
             return res.status(200).json({

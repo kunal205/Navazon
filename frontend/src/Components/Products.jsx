@@ -25,7 +25,7 @@ const Products = ({
   return (
     <>
       <div
-        className="col-6 col-md-4 col-lg-3 my-1 my-md-3 pro-container"
+        className="col-6 col-md-4 col-lg-3 my-md-3 pro-container"
         style={{ cursor: "pointer" }}
       >
         <div

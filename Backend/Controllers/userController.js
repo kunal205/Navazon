@@ -30,7 +30,10 @@ export const allUser = async (req, res) => {
             users: users
         })
     } catch (error) {
-
+        return res.status(400).json({
+            status: "fail",
+            message: `${error}`
+        })
     }
 }
 export const wishlist = async (req, res) => {

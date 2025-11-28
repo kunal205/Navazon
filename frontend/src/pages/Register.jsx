@@ -10,7 +10,7 @@ const Register = () => {
   const { name, gender, age, dob, email, password, confirmPassword, address } =
     user;
   useEffect(() => {
-    if (user && message) {
+    if (user || message) {
       redirect("/");
     }
   }, [user, message, redirect]);

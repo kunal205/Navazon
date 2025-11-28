@@ -10,11 +10,10 @@ const Login = () => {
     dispatch(isCurrentUser());
   }, [dispatch]);
   useEffect(() => {
-    if (user && message) {
+    if (user || message) {
       redirect("/");
     }
   }, [user, message, redirect]);
-  console.log(user.message);
   const { email, password } = user;
   const handleLogIn = async () => {
     dispatch(logInUser(user));

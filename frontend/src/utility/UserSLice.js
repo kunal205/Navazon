@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import WishList from "../Components/WishList";
 export const getAllUsers = createAsyncThunk("getAllUsers", async (thunkAPI) => {
     try {
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/user/users`, { withCredentials: true });
@@ -125,7 +124,6 @@ const userSlice = createSlice({
                 state.isAuthLoading = false
                 state.isloading = false
                 state.user = { ...defaultuser, ...action.payload.user };
-                state.message = action.payload.message
             })
             .addCase(getAllUsers.pending, (state) => {
                 state.isloading = true;
@@ -168,12 +166,14 @@ const userSlice = createSlice({
             })
             .addCase(addToWishlist.fulfilled, (state, action) => {
                 state.user = action.payload.user;
+                state.message = action.payload.message
             })
             .addCase(addToWishlist.rejected, (state, action) => {
                 state.error = action.payload;
             })
             .addCase(addToCart.fulfilled, (state, action) => {
                 state.user = action.payload.user;
+                state.message = action.payload.message
             })
             .addCase(addToCart.rejected, (state, action) => {
                 state.error = action.payload;
