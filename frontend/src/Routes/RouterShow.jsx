@@ -11,7 +11,7 @@ import SingleProduct from "../Components/SingleProduct.jsx";
 import WishList from "../Components/WishList.jsx";
 import AddToCart from "../Components/AddToCart.jsx";
 import BuyNow from "../Components/BuyNow.jsx";
-import Profile from "../Components/profile.jsx";
+import Profile from "../Components/Profile.jsx";
 const RouterShow = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.users);

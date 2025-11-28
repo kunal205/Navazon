@@ -124,6 +124,7 @@ const userSlice = createSlice({
                 state.isAuthLoading = false
                 state.isloading = false
                 state.user = { ...defaultuser, ...action.payload.user };
+                state.message = action.payload.message
             })
             .addCase(getAllUsers.pending, (state) => {
                 state.isloading = true;
