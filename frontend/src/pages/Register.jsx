@@ -11,10 +11,8 @@ const Register = () => {
   const { name, gender, age, dob, email, password, confirmPassword, address } = user;
   
   useEffect(() => {
-    if (user && message) {
-      redirect("/");
-    }
-  }, [user, message, redirect]);
+    if (message && !error) redirect("/");
+}, [message, error]);
   
   const [image, setImg] = useState();
   const fd = new FormData();
